@@ -1,0 +1,71 @@
+
+ion-modal{
+    padding: 100px 30px 100px 30px;
+    background: rgba(0,0,0,0.8);
+}
+
+page-lesson{
+    div.first{
+        width:100%;
+        padding:0!important;
+        margin-top: 0;
+        margin-bottom: -6px;
+
+        .button {
+            background: #f1f1f1;
+            color: #757575;
+            width: 46%;
+            box-shadow: none;
+        }
+
+        .button:hover {
+              background: #e6e6e6;
+            }
+    }
+
+    div.second{
+        background-color: #fbfbfb;
+        padding:0!important;
+        width:100%;
+        height:260px;
+        margin-top: 0;
+        margin-bottom: -5px;
+
+        ion-item {
+            background-color: transparent !important;
+            margin-bottom: -30px !important;
+
+            ion-icon{
+                color: #666666;
+            }
+
+            ion-label{
+                color: #757575;
+            }
+         }
+
+         .border{  
+            margin-bottom: -10px !important;
+        }
+
+        .button{
+            float:right;
+            margin-bottom: -30px !important;
+            border: 0 !important;
+        }
+    }
+
+    div.pading{
+        padding: 20px 20px 20px 20px !important;
+    }
+
+    p.title {
+        color: map-get($colors, dolphin);
+        font-size: 1.5em;
+        display: block;
+        margin-top: 0em;
+        margin-bottom: 0.3em;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

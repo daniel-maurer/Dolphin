@@ -1,0 +1,61 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Schedule</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <button ion-item (click)="onRepeats()">
+      <ion-icon name="repeat" item-start color="dolphin"></ion-icon>
+      Repeats
+    </button>
+
+  <form [formGroup]="scheduleForm" (ngSubmit)="onSubmit(); $event.preventDefault()">
+
+    <ion-item [hidden]="!repeats">
+      <ion-label>Weekday</ion-label>
+      <ion-icon name="calendar" item-left color="dolphin"></ion-icon>
+      <ion-select formControlName="weekday">
+        <ion-option value="Monday">Monday</ion-option>
+        <ion-option value="Tuesday">Tuesday</ion-option>
+        <ion-option value="Wednesday">Wednesday</ion-option>
+        <ion-option value="Thursday">Thursday</ion-option>
+        <ion-option value="Friday">Friday</ion-option>
+        <ion-option value="Saturday">Saturday</ion-option>
+        <ion-option value="Sunday">Sunday</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="calendar" item-left color="dolphin"></ion-icon>
+      <ion-label>{{startDate}}</ion-label>
+      <ion-datetime displayFormat="DD/MMM/YYYY" min="2016" max="2020" pickerFormat="DD/MMM/YYYY" formControlName="startDate"></ion-datetime>
+    </ion-item>
+
+    <ion-item [hidden]="!repeats">
+      <ion-icon name="calendar" item-left color="dolphin"></ion-icon>
+      <ion-label>Dia Fim</ion-label>
+      <ion-datetime displayFormat="DD MMM YYYY" min="2016" max="2020-12-31" pickerFormat="DD MMM YYYY" formControlName="endDate"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="clock" item-left color="dolphin"></ion-icon>
+      <ion-label>Hora Início</ion-label>
+      <ion-datetime displayFormat="HH mm" pickerFormat="HH mm" formControlName="startHour"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="clock" item-left color="dolphin"></ion-icon>
+      <ion-label>Hora Fim</ion-label>
+      <ion-datetime displayFormat="HH mm" pickerFormat="HH mm" formControlName="endHour"></ion-datetime>
+    </ion-item>
+
+    <br>
+    <button ion-button full type="submit" [disabled]="scheduleForm.invalid">Add Schedule</button>
+
+  </form>
+</ion-content>

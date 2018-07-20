@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Class</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+<form [formGroup]="classForm" (ngSubmit)="onSubmit(); $event.preventDefault()">
+
+    <ion-item>
+      <ion-icon name="people" item-left color="dolphin"></ion-icon>
+      <ion-input type="text" placeholder="Class Name" formControlName="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="flag" item-left color="dolphin"></ion-icon>
+      <ion-input type="text" placeholder="Abbreviation" formControlName="abbreviation"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="pin" item-left color="dolphin"></ion-icon>
+      <ion-input type="text" placeholder="Room" formControlName="room"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="contact" item-left color="dolphin"></ion-icon>
+      <ion-input type="text" placeholder="Teacher" formControlName="teacher"></ion-input>
+    </ion-item>
+
+  </form>
+
+  <button ion-item (click)="onSchedule()">
+    <ion-icon name="time" item-start color="dolphin"></ion-icon>
+    {{schedule}}
+  </button>
+
+  <br>
+    <button ion-button full (click)="onSubmit()" [disabled]="classForm.invalid">Create Class</button>
+
+</ion-content>

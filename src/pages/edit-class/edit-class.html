@@ -1,0 +1,60 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Edit Class</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <button ion-item (click)="showPrompt('Nome', 'Insira um nome.', name, 'name')">
+      <div>
+        <ion-icon name="people" color="dolphin"></ion-icon>
+        <label>Nome</label>
+        <p>
+          {{name}}
+        </p>
+      </div>
+    </button>
+    <button ion-item (click)="showAlert()">
+      <div>
+        <ion-icon name="flag" color="dolphin"></ion-icon>
+        <label>Abreviação</label>
+        <p>
+          {{abbreviation}}
+        </p>
+      </div>
+    </button>
+    <button ion-item (click)="showPrompt('Escola', 'Insira o nome da escola.', school, 'school')">
+      <div>
+        <ion-icon name="school" color="dolphin"></ion-icon>
+        <label>Escola</label>
+        <p>
+          {{school}}
+        </p>
+      </div>
+    </button>
+    <button ion-item (click)="showPrompt('Sala', 'Insira a sala.', room, 'room')">
+      <div>
+        <ion-icon name="pin" color="dolphin"></ion-icon>
+        <label>Sala</label>
+        <p>
+          {{room}}
+        </p>
+      </div>
+    </button>
+    <button ion-item (click)="showPrompt('Professor', 'Insira o nome do professor.', teacher, 'teacher')">
+      <div>
+        <ion-icon name="contact" color="dolphin"></ion-icon>
+        <label>Professor</label>
+        <p>
+          {{teacher}}
+        </p>
+      </div>
+    </button>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Selecionar Turma</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="card-background-page">
+  <ion-list>
+    <ion-card *ngFor="let class of classes">
+        <img src="assets/images/science.jpg"/>
+        <div class="card-title">{{ class.name }}</div>
+        <div class="card-subtitle">{{ class.teacher }}</div>
+      </ion-card>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-content>
+  <div class="first">
+    <div class="pading">
+      <p class="title">{{ lessonName }}</p>
+      <p>{{ lessonDate }}</p>
+      <h3>
+        <button ion-button item-start class="button" color="dolphin">
+          Deletar
+        </button>
+        <button ion-button item-end (click)="onEdit()" class="button">
+          Editar
+        </button>
+      </h3>
+    </div>
+  </div>
+
+  <div class="second">
+    <ion-list no-lines>
+      <ion-item class="border">
+        <ion-label>Presença</ion-label>
+        <ion-checkbox color="dolphin" [(ngModel)]="presence" (click)="onPresence()"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <button ion-item color="transparent">
+          <ion-icon name='pin' item-start></ion-icon>
+          {{room}}
+        </button>
+      </ion-item>
+      <ion-item>
+        <button ion-item color="transparent">
+          <ion-icon name='person' item-start></ion-icon>
+          {{teacher}}
+        </button>
+      </ion-item>
+      <ion-item>
+        <button ion-item color="transparent">
+          <ion-icon name='time' item-start></ion-icon>
+          {{schedule}}
+        </button>
+      </ion-item>
+    </ion-list>
+
+    <button ion-button text-center clear end (click)="closeModal()" color="dolphin">Fechar</button>
+  </div>
+
+</ion-content>

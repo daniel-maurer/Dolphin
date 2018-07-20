@@ -1,0 +1,17 @@
+page-chat {
+
+    .scroll-content {
+      margin-top: 0 !important;
+    }
+  ion-header, 
+    .toolbar-background {
+      background-color: initial !important;
+      // background-color: rgba(0,0,0,0) !important;
+
+      &:after {
+        height: 0  !important;
+      }
+    }
+
+}
+

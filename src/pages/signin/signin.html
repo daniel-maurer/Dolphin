@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Sign In</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <h1 text-center>
+    <!--<ion-icon class="auth-icon" name="person-add" color="primary"></ion-icon> -->
+    <img [src]="'assets/images/dolphin_logo.png'" height="121" width="105">
+  </h1>
+
+  <form [formGroup]="signinForm" (ngSubmit)="onSubmit(); $event.preventDefault()">
+
+    <ion-item>
+      <ion-icon name="mail" item-left color="dolphin"></ion-icon>
+      <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="lock" item-left color="dolphin"></ion-icon>
+      <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+    </ion-item>
+
+    <br>
+    <button ion-button full type="submit" [disabled]="signinForm.invalid" color="dolphin">Enter</button>
+
+  </form>
+
+  <button ion-button full clear textx-center (click)="onSignup()" color="dolphin">Sign Up</button>
+  <button ion-button text-center (click)="onHome()" color="dolphin">Home Page</button>
+
+</ion-content>

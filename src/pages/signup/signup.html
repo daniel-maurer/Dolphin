@@ -1,0 +1,78 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <h1 text-center>
+    <ion-icon class="auth-icon" name="person-add" color="dolphin"></ion-icon>
+  </h1>
+
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit(); $event.preventDefault()">
+
+    <ion-item>
+      <ion-icon name="person" item-left color="dolphin"></ion-icon>
+      <ion-input type="text" placeholder="Name" formControlName="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="at" item-left color="dolphin"></ion-icon>
+      <ion-input type="text" placeholder="Username" formControlName="username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="mail" item-left color="dolphin"></ion-icon>
+      <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="lock" item-left color="dolphin"></ion-icon>
+      <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Tipo de Conta</ion-label>
+      <ion-icon name="people" item-left color="dolphin"></ion-icon>
+      <ion-select formControlName="accountType">
+        <ion-option value="student">Aluno</ion-option>
+        <ion-option value="father">Pai</ion-option>
+        <ion-option value="teacher">Professor</ion-option>
+        <ion-option value="school">Escola</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>País</ion-label>
+      <ion-icon name="flag" item-left color="dolphin"></ion-icon>
+      <ion-select formControlName="country">
+        <ion-option value="brazil">Brazil</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="ice-cream" item-left color="dolphin"></ion-icon>
+      <ion-label>Data de Aniversário</ion-label>
+      <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY" formControlName="birthDate"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Sexo</ion-label>
+      <ion-icon name="female" item-left color="dolphin"></ion-icon>
+      <ion-icon name="male" item-left color="dolphin"></ion-icon>
+      <ion-select formControlName="sex">
+        <ion-option value="female">Femenino</ion-option>
+        <ion-option value="male">Masculino</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <br>
+    <button ion-button full type="submit" [disabled]="signupForm.invalid">Create Account</button>
+
+  </form>
+
+</ion-content>

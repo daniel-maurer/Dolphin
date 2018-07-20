@@ -1,0 +1,77 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Editar Aula</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+    <ion-list>
+        <button ion-item (click)="showPrompt('Nome', 'Insira um nome.', name, 'name')">
+          <div>
+            <ion-icon name="book" color="dolphin"></ion-icon>
+            <label>Nome</label>
+            <p>
+              {{name}}
+            </p>
+          </div>
+        </button>
+        <button ion-item (click)="showPrompt('Informação', 'Insira alguma informação.', info, 'info')">
+          <div>
+            <ion-icon name="bookmarks" color="dolphin"></ion-icon>
+            <label>Informação</label>
+            <p>
+              {{info}}
+            </p>
+          </div>
+        </button>
+        <button ion-item (click)="showPrompt('Sala', 'Insira a sala.', room, 'room')">
+          <div>
+            <ion-icon name="pin" color="dolphin"></ion-icon>
+            <label>Sala</label>
+            <p>
+              {{room}}
+            </p>
+          </div>
+        </button>
+        <button ion-item (click)="showPrompt('Professor', 'Insira o nome do professor.', teacher, 'teacher')">
+          <div>
+            <ion-icon name="contact" color="dolphin"></ion-icon>
+            <label>Professor</label>
+            <p>
+              {{teacher}}
+            </p>
+          </div>
+        </button>
+        <button ion-item>
+          <div>
+            <ion-icon name="time" color="dolphin"></ion-icon>
+            <label>Hora do Início</label>
+            <p>
+              {{startHour}}
+            </p>
+          </div>
+        </button>
+        <button ion-item>
+          <div>
+            <ion-icon name="time" color="dolphin"></ion-icon>
+            <label>Hora do Fim</label>
+            <p>
+              {{endHour}}
+            </p>
+          </div>
+        </button>
+
+        <ion-item class="border">
+          <ion-label>Presença</ion-label>
+          <ion-checkbox color="dolphin" [(ngModel)]="presence" (click)="onPresence()"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+
+
+
+</ion-content>

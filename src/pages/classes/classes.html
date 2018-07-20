@@ -1,0 +1,72 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+
+  <ion-card class="cards-list-demo">
+        <ion-list>
+      <button ion-item color="backgroundDark">
+        <ion-icon name='pin' item-start></ion-icon>
+        {{room}}
+      </button>
+
+      <button ion-item color="backgroundDark">
+        <ion-icon name='person' item-start></ion-icon>
+        {{teacher}}
+      </button>
+
+      <button ion-item color="backgroundDark">
+        <ion-icon name='time' item-start></ion-icon>
+        {{schedule}}
+      </button>
+
+      <ion-card-header class="button-header">
+        <button ion-item (click)="onEdit()">
+          <ion-icon name='ios-arrow-round-forward' item-start></ion-icon>
+          Editar
+        </button>
+      </ion-card-header>
+    </ion-list>
+  </ion-card>
+
+
+<!--Lessons -->
+
+  <ion-list>
+    <button ion-item *ngFor="let lesson of lessons" (click)="onLesson(lesson)">
+      <div>
+        <ion-icon name="book" color="dolphin"></ion-icon>
+        <label>{{ lesson.name }}</label>
+        <p>
+          {{ lesson.date }}
+        </p>
+      </div>
+    </button>
+  </ion-list>
+
+  <ion-fab right bottom *ngIf="showMenu" (click)="showMenuItems()" #fab1>
+    <button ion-fab color="light"><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab (click)="onAddClass(fab1)"><ion-icon name="people"></ion-icon>
+      </button>
+      <button ion-fab (click)="onShowClasses(fab1)"><ion-icon name="people"></ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab> 
+
+  <!-- To add text in FAB https://github.com/ionic-team/ionic/issues/8425 -->
+
+    <div class="labelContainer" *ngIf="showMenuItem">
+      <div class="container">
+        <a (click)="onShowClasses"><div class="label">Escolher Turma</div></a>
+        <a (click)="onAddClass"><div class="label">Adicionar Turma</div></a>
+      </div>
+    </div>
+
+</ion-content>
